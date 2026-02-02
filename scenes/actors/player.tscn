@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv5rwp5ksd2ht"]
+
+[ext_resource type="Script" uid="uid://by6ff7geiyyf6" path="res://scripts/player_controller.gd" id="1_15tap"]
+[ext_resource type="AudioStream" uid="uid://bce1vjejdq0ts" path="res://assets/sounds/footsteps.mp3" id="2_ru62r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ru62r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_15tap"]
+font_size = 24
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ru62r"]
+
+[node name="Player" type="CharacterBody3D"]
+floor_max_angle = 1.134464
+script = ExtResource("1_15tap")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ru62r")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670176, -0.33779195)
+light_color = Color(0.9999983, 0.99927574, 0.7231147, 1)
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68399376, 0)
+target_position = Vector3(0, 0, -2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-2, -2)
+
+[node name="LabelMisi" type="Label" parent="CanvasLayer"]
+offset_right = 258.0
+offset_bottom = 23.0
+text = "Misi: Cari Kunci Kamar di Lantai 1"
+label_settings = SubResource("LabelSettings_15tap")
+
+[node name="TombolMaju" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(206, 303)
+scale = Vector2(135, 123.00001)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "move_forward"
+
+[node name="TombolMundur" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(208, 489)
+scale = Vector2(135, 123.00001)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "move_backward"
+
+[node name="TombolKiri" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(31.000015, 395)
+scale = Vector2(135, 123.00001)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "move_left"
+
+[node name="TombolKanan" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(379, 408.00003)
+scale = Vector2(135, 123.00001)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "move_right"
+
+[node name="TombolInteraksi" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(898.00006, 439)
+scale = Vector2(83.99996, 69)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "interact"
+
+[node name="TombolSenter" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(900, 559)
+scale = Vector2(83.99996, 69)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "flashlight"
+
+[node name="TombolLari" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(1032, 443.99997)
+scale = Vector2(83.99996, 69)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "sprint"
+
+[node name="TombolLompat" type="TouchScreenButton" parent="CanvasLayer"]
+visible = false
+position = Vector2(1030, 552)
+scale = Vector2(83.99996, 69)
+texture_normal = SubResource("PlaceholderTexture2D_ru62r")
+action = "jump"
+
+[node name="SfxKaki" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ru62r")
+volume_db = -5.0

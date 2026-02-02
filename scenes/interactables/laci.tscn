@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://b06mvvvs0t4or"]
+
+[ext_resource type="Script" uid="uid://dtmy4qdf0cxh" path="res://scripts/laci.gd" id="1_bihb0"]
+[ext_resource type="AudioStream" uid="uid://c3428t5mlr863" path="res://assets/sounds/drawer_open.wav" id="2_h4htf"]
+[ext_resource type="AudioStream" uid="uid://dcnm4elhcnfbd" path="res://assets/sounds/drawer_close.wav" id="3_kpejl"]
+[ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="4_kpejl"]
+
+[sub_resource type="Animation" id="Animation_h4htf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCombiner3D/CSGBox3D6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.048541963)]
+}
+
+[sub_resource type="Animation" id="Animation_nsxna"]
+resource_name = "buka_laci"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCombiner3D/CSGBox3D6:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.048541963), Vector3(0, 0, 0.52427804)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpejl"]
+_data = {
+&"RESET": SubResource("Animation_h4htf"),
+&"buka_laci": SubResource("Animation_nsxna")
+}
+
+[node name="Laci" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+script = ExtResource("1_bihb0")
+sfx_buka = ExtResource("2_h4htf")
+sfx_tutup = ExtResource("3_kpejl")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+material = ExtResource("4_kpejl")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.085888565)
+operation = 2
+size = Vector3(0.678, 0.29, 0.668)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.048541963)
+size = Vector3(0.678, 0.29, 0.668)
+material = ExtResource("4_kpejl")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0040561557, 0.03026367, 0.012394071)
+operation = 2
+size = Vector3(0.5778252, 0.22947265, 0.52283496)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D6"]
+transform = Transform3D(0.045, 0, 0, 0, -1.1802075e-09, -0.045, 0, 0.027, -1.9670126e-09, 0, 0, 0.35409808)
+sides = 24
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D6"]
+transform = Transform3D(0.065, 0, 0, 0, -9.616505e-10, -0.065, 0, 0.022, -2.8412401e-09, 0, 0, 0.38862956)
+sides = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kpejl")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

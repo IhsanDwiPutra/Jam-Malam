@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx6kujcwpegcd"]
+
+[ext_resource type="Script" uid="uid://v1s4fiwflf4n" path="res://scripts/laptop.gd" id="1_q0a6r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0a6r"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_invj6"]
+albedo_color = Color(1, 1, 0.92941177, 1)
+
+[node name="Laptop" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+script = ExtResource("1_q0a6r")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.097579956, -0.13290459, 0.23242188)
+size = Vector3(0.8598938, 0.028808594, 0.53515625)
+material = SubResource("StandardMaterial3D_q0a6r")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -0.4011646, 0.91600615, 0, -0.91600615, -0.4011646, -0.097579956, 0.114901274, -0.12808543)
+size = Vector3(0.8598938, 0.028808594, 0.53515625)
+material = SubResource("StandardMaterial3D_invj6")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(0.945, 0, 0, 0, 0.945, 0, 0, 0, 0.945, 0, -0.013109934, 0.0048375577)
+operation = 2
+size = Vector3(0.8598938, 0.028808594, 0.53515625)

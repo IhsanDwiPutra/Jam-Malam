@@ -1,0 +1,423 @@
+[gd_scene load_steps=11 format=3 uid="uid://bepc6pwf7cllb"]
+
+[ext_resource type="PackedScene" uid="uid://bv5rwp5ksd2ht" path="res://scenes/actors/player.tscn" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://df4w3dgk6oe4x" path="res://scenes/interactables/pintu.tscn" id="2_6iamk"]
+[ext_resource type="PackedScene" uid="uid://b06mvvvs0t4or" path="res://scenes/interactables/laci.tscn" id="3_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://dk102u6mpg83v" path="res://scenes/interactables/laci_2.tscn" id="4_x42e6"]
+[ext_resource type="PackedScene" uid="uid://bvc5vm244c4en" path="res://scenes/interactables/kunci.tscn" id="5_6761a"]
+[ext_resource type="PackedScene" uid="uid://cx6kujcwpegcd" path="res://scenes/interactables/laptop.tscn" id="6_sk5k4"]
+[ext_resource type="Script" uid="uid://6ans7mm72jqv" path="res://scripts/finish.gd" id="7_oc4kc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6761a"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.16078432)
+
+[sub_resource type="Environment" id="Environment_ksju7"]
+background_mode = 1
+background_color = Color(0.011764706, 0.011764706, 0.019607844, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0, 0, 0.08235294, 1)
+ambient_light_energy = 0.5
+fog_enabled = true
+fog_light_color = Color(0, 0, 0.02745098, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8va5"]
+size = Vector3(2, 1, 2)
+
+[node name="Level1" type="Node3D"]
+
+[node name="BangunanInduk" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028486252, 0.0042517185, -0.0026938915)
+use_collision = true
+size = Vector3(10, 8, 20)
+
+[node name="LubangLorong" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24368286, 0.56030273)
+operation = 2
+size = Vector3(2.5, 6.5126343, 20.879395)
+
+[node name="PijakanLantai2" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25133753, 0)
+size = Vector3(2.5, 0.5, 20)
+
+[node name="Kamar1" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, -2, 1.2)
+operation = 2
+size = Vector3(3.5, 3, 5)
+
+[node name="KamarMandi" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, -7.769035)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar10" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, -3.3740392)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar9" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16, 1.498, -3.374)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar8" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, 1.025185)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar7" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16, 1.498, 1.025)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar6" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, 5.7618833)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar5" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16, 1.498, 5.762)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="LorongAtas" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.505, 9.129)
+operation = 2
+size = Vector3(9.611, 3.014, 1.629)
+
+[node name="Kamar2" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, -2, -3.6)
+operation = 2
+size = Vector3(3.5, 3, 4)
+
+[node name="Kamar3" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, -2, 1.2)
+operation = 2
+size = Vector3(3.5, 3, 5)
+
+[node name="Kamar4" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, -2, -3.6)
+operation = 2
+size = Vector3(3.5, 3, 4)
+
+[node name="AreaDapur" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0492187, -2, -7.979622)
+operation = 2
+size = Vector3(3.6015625, 3, 3.8)
+
+[node name="Tangga" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.049, -2, -7.98)
+operation = 2
+size = Vector3(3.6015625, 3, 3.8)
+
+[node name="Tangga2" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.049, 1.2646949, -7.9799995)
+operation = 2
+size = Vector3(3.6015625, 3.5298157, 3.8)
+
+[node name="RuangTamu" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 7)
+operation = 2
+size = Vector3(9, 3, 5.845)
+
+[node name="Pintu1" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.278, -2.3999448, -0.6412254)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu2" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.278, -2.3999448, -2.255425)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu3" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.278, -2.4, -0.641)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu4" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.278, -2.4, -2.255)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu5" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3243, 1.0992054, -1.9060074)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu11" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3243, 1.0992054, -6.3042183)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu6" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324, 1.099, -1.906)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu7" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324, 1.099, -0.4416438)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu8" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.324, 1.099, -0.442)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu9" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.324, 1.099, 4.296939)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu10" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324, 1.099, 4.297)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Dapur" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0556445, -2.9766846, -9.468714)
+size = Vector3(3.6123352, 1, 0.8416748)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="BangunanInduk/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.352946, 0.46553445, -0.010154724)
+operation = 2
+size = Vector3(0.7827301, 0.49777985, 0.6709137)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="BangunanInduk/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.352946, -0.1014173, -0.010154724)
+operation = 2
+size = Vector3(0.073, 0.68165916, 0.071)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="BangunanInduk/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45316768, 0.27880478, 0.038246155)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="BangunanInduk/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45316768, -0.18977809, 0.038246155)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="BangunanInduk/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44655514, 0.028420687, 0.038246155)
+operation = 2
+size = Vector3(0.7827301, 0.76184464, 0.76771545)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="BangunanInduk/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 0.95601857, -0.29330623, 0, 0.29330623, 0.95601857, -1.3468492, 0.5969138, -0.34794426)
+size = Vector3(0.057, 0.238, 0.051)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="BangunanInduk/Dapur/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.64653695, 0.7628828, 0, -0.7628828, 0.64653695, 0, 0.069149494, 0.032262802)
+size = Vector3(0.027, 0.083, 0.051)
+
+[node name="Dapur2" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.4497223, -2.9766846, -7.8417406)
+size = Vector3(2.4242096, 1, 0.8416748)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="BangunanInduk/Dapur2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55146885, 0.27880478, 0.05807972)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="BangunanInduk/Dapur2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55146885, -0.16490984, 0.05807972)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="BangunanInduk/Dapur2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4060688, 0.028420687, 0.057083607)
+operation = 2
+size = Vector3(0.7827301, 0.76184464, 0.76771545)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="BangunanInduk"]
+
+[node name="Bordes" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.1015053, -2.20261, -6.6451507)
+size = Vector3(1.2774658, 0.2, 1.5)
+
+[node name="Bordes2" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.2935886, -1.421941, -9.232571)
+size = Vector3(1.2774658, 0.2, 1.5)
+
+[node name="AnakTangga" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.403687, -3.4, -6.679962)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga2" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.7033116, -3.2, -6.679962)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga3" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.003, -3, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga4" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.303, -2.8, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga5" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.603, -2.6, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga6" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.903, -2.4, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga7" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.203, -2.2, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga8" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.248658, -2.0262656, -7.434019)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga9" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.248658, -1.8262656, -7.7336435)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga10" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2486205, -1.6262655, -8.033332)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga11" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2486205, -1.4262655, -8.333332)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga12" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4998858, -1.2203984, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga13" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.2002614, -1.0203984, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga14" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.900573, -0.8203984, -9.281259)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga15" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.6005728, -0.62039834, -9.281259)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga16" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.3345108, -0.37872842, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga17" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.0348864, -0.17872837, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+
+[node name="AnakTangga18" type="CSGBox3D" parent="BangunanInduk/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5317802, -0.04200353, -9.281259)
+size = Vector3(1.2, 0.07344971, 0.7068359)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2147844, 0.5763848, -7.3656006)
+size = Vector3(0.04248047, 1.1343994, 2.6154785)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0865319, -1.9203131, 9.811793)
+operation = 2
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="BangunanInduk/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14495564)
+material_override = SubResource("StandardMaterial3D_6761a")
+size = Vector3(1, 1, 0.025)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.087, -1.92, 9.812)
+operation = 2
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="BangunanInduk/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14495564)
+material_override = SubResource("StandardMaterial3D_6761a")
+size = Vector3(1, 1, 0.025)
+
+[node name="Player" parent="." instance=ExtResource("1_ksju7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8750157, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.14154053, 0.9899325, 0, -0.9899325, 0.14154053, 0, 6.138641, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ksju7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.69315696, -4.7567687)
+light_color = Color(1, 1, 0.76862746, 1)
+light_energy = 0.8
+
+[node name="Pintu1" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3480868, -2.3929632, 0.007304311)
+
+[node name="Pintu3" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.348, -2.393, -1.2947817)
+
+[node name="Pintu4" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.348, -2.393, -2.9066849)
+
+[node name="Pintu5" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, -2.5587862)
+
+[node name="Pintu11" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, -6.956963)
+
+[node name="Pintu8" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3494323, 1.0992054, -1.2606096)
+
+[node name="Pintu9" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3494323, 1.0992054, 0.20630491)
+
+[node name="Pintu10" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3494323, 1.0992054, 4.9458265)
+
+[node name="BodyPintu" parent="Pintu10" index="0"]
+is_locked = true
+
+[node name="Pintu6" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, -1.1017573)
+
+[node name="Pintu7" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, 3.6498985)
+
+[node name="Pintu2" parent="." instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3475411, -2.3929632, -1.596086)
+
+[node name="Kunci" parent="." instance=ExtResource("5_6761a")]
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 3.5737052, -3.2681465, -9.30818)
+
+[node name="Laci" parent="." instance=ExtResource("3_nsrm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6024768, -2.6978798, -9.430468)
+
+[node name="Laci5" parent="." instance=ExtResource("3_nsrm0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.41378, -2.6978798, -7.2902718)
+
+[node name="Laci6" parent="." instance=ExtResource("3_nsrm0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.41378, -3.1430008, -7.2902718)
+
+[node name="Laci2" parent="." instance=ExtResource("3_nsrm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6024768, -3.1664627, -9.430468)
+
+[node name="Laci3" parent="." instance=ExtResource("4_x42e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0968087, -2.948264, -9.106819)
+
+[node name="Laci4" parent="." instance=ExtResource("4_x42e6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.091257, -2.948264, -8.65209)
+
+[node name="Laptop" parent="." instance=ExtResource("6_sk5k4")]
+transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, -4.3467665, 0.18608272, 5.249497)
+
+[node name="AreaFinish" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.132607, 7.9467583)
+script = ExtResource("7_oc4kc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaFinish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3697938, 0.7362814)
+shape = SubResource("BoxShape3D_s8va5")
+
+[connection signal="body_entered" from="AreaFinish" to="AreaFinish" method="_on_body_entered"]
+
+[editable path="Pintu1"]
+[editable path="Pintu10"]

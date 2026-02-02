@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b831kqyvxfgu6"]
+
+[ext_resource type="Texture2D" uid="uid://oi716t311571" path="res://assets/textures/stainles.jpeg" id="1_iey0a"]
+
+[resource]
+albedo_texture = ExtResource("1_iey0a")

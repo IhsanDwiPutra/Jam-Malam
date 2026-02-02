@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://yeoggcfqtdm8"]
+
+[ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="1_524ag"]
+[ext_resource type="Texture2D" uid="uid://vro3ydjy7day" path="res://assets/textures/pvc.png" id="2_swyii"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsxpy"]
+albedo_color = Color(1, 0, 0.5686275, 1)
+albedo_texture = ExtResource("2_swyii")
+uv1_scale = Vector3(0.495, -0.42, 1)
+
+[node name="Sofa1" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.55138874, 0, 0, 0, 1, 0, 0, 0, 0.88912046, 0.059173584, -0.2492981, 0)
+size = Vector3(2.242, 0.501, 1)
+material = ExtResource("1_524ag")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.55138874, 0, 0, 0, 1, 0, 0, 0, 0.88912046, 0.059173584, 0.0029819608, -0.5504364)
+size = Vector3(2.242, 1.00556, 0.28027344)
+material = ExtResource("1_524ag")
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1.1711688, 0, 0, 0, 1.4901161e-08, -1, 0, 0.6227926, 2.9802322e-08, 0, 0.326, -0.346)
+radius = 0.42175016
+radial_segments = 24
+rings = 24
+material = SubResource("StandardMaterial3D_xsxpy")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1.1711688, 0, 0, 0, 0.6227926, 0, 0, 0, 1, 0, 0.07, 0.042)
+radius = 0.42175016
+radial_segments = 24
+rings = 24
+material = SubResource("StandardMaterial3D_xsxpy")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.525, 0, 0, 0, -2.5300109e-08, -0.525, 0, 0.578799, -2.2948479e-08, -0.69760656, 0.24535012, -0.11384295)
+height = 1.9301758
+sides = 24
+material = ExtResource("1_524ag")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.525, 0, 0, 0, -2.5300109e-08, -0.525, 0, 0.578799, -2.2948479e-08, 0.698, 0.245, -0.114)
+height = 1.9301758
+sides = 24
+material = ExtResource("1_524ag")

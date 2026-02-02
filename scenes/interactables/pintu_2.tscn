@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://krqewhpc3io2"]
+
+[ext_resource type="Script" uid="uid://d1vibwdluqj1a" path="res://scripts/pintu_2.gd" id="1_61euu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cp741"]
+size = Vector3(1.25, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cp741"]
+size = Vector3(1.2893066, 3.0444336, 0.25878906)
+
+[sub_resource type="Animation" id="Animation_vg52u"]
+resource_name = "open_door"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8d17"]
+_data = {
+&"open_door": SubResource("Animation_vg52u")
+}
+
+[node name="pintu2" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("1_61euu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63, 0, 0)
+mesh = SubResource("BoxMesh_cp741")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62627923, 0.011962891, 0.0014648438)
+shape = SubResource("BoxShape3D_cp741")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 0, 0)
+mesh = SubResource("BoxMesh_cp741")
+skeleton = NodePath("../../StaticBody3D2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6327551, 0, 0)
+shape = SubResource("BoxShape3D_cp741")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e8d17")
+}

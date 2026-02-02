@@ -1,0 +1,108 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnxx1f2rtwshp"]
+
+[ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="1_4phkw"]
+
+[node name="tangga" type="Node3D"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+use_collision = true
+
+[node name="Bordes" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.1015053, -2.20261, -6.6451507)
+size = Vector3(1.2774658, 0.2, 1.5)
+material = ExtResource("1_4phkw")
+
+[node name="Bordes2" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.2935886, -1.421941, -9.232571)
+size = Vector3(1.2774658, 0.2, 1.5)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.403687, -3.4, -6.679962)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga2" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.7033116, -3.2, -6.679962)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga3" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.003, -3, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga4" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.303, -2.8, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga5" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.603, -2.6, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga6" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.903, -2.4, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga7" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.203, -2.2, -6.68)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga8" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.248658, -2.0262656, -7.434019)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga9" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.248658, -1.8262656, -7.7336435)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga10" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2486205, -1.6262655, -8.033332)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga11" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2486205, -1.4262655, -8.333332)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga12" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4998858, -1.2203984, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga13" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.2002614, -1.0203984, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga14" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.900573, -0.8203984, -9.281259)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga15" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.6005728, -0.62039834, -9.281259)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga16" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.3345108, -0.37872842, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga17" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.0348864, -0.17872837, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("1_4phkw")
+
+[node name="AnakTangga18" type="CSGBox3D" parent="CSGPolygon3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5317802, -0.04200353, -9.281259)
+size = Vector3(1.2, 0.07344971, 0.7068359)
+material = ExtResource("1_4phkw")

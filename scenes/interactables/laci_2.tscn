@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk102u6mpg83v"]
+
+[ext_resource type="Script" uid="uid://liconl86813q" path="res://scripts/laci_2.gd" id="1_vxkn5"]
+[ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="2_dsn1g"]
+[ext_resource type="Material" uid="uid://b831kqyvxfgu6" path="res://resources/stainles_material.tres" id="3_o26ub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e36jo"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.23921569)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxkn5"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.24313726)
+
+[sub_resource type="Animation" id="Animation_vxkn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCombiner3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e36jo"]
+resource_name = "buka_laci"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCombiner3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_078kr"]
+_data = {
+&"RESET": SubResource("Animation_vxkn5"),
+&"buka_laci": SubResource("Animation_e36jo")
+}
+
+[node name="Laci2" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+script = ExtResource("1_vxkn5")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39968565, 0, 0)
+size = Vector3(0.783, 0.762, 0.123)
+material = ExtResource("2_dsn1g")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D6"]
+operation = 2
+size = Vector3(0.688, 0.697, 0.123)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000138551, 0, 0)
+material_override = SubResource("StandardMaterial3D_e36jo")
+size = Vector3(0.688, 0.697, 0.003)
+material = SubResource("StandardMaterial3D_vxkn5")
+
+[node name="CSGBox3D8" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D6"]
+transform = Transform3D(0.035, 0, 0, 0, -2.8493967e-09, -0.034999996, 0, 0.06518659, -1.5298984e-09, 0.3690724, -0.01750049, 0.019957334)
+sides = 24
+material = ExtResource("3_o26ub")
+
+[node name="CSGBox3D9" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D6"]
+transform = Transform3D(0.045, 0, 0, 0, -7.8680495e-10, -0.045, 0, 0.018, -1.9670126e-09, 0.36907238, -0.01750049, 0.09005053)
+sides = 24
+material = ExtResource("3_o26ub")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_078kr")
+}

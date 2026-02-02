@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://wavlwkh1w607"]
+
+[sub_resource type="Animation" id="Animation_tbjjs"]
+resource_name = "buka_kulkas"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tcyjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46bdx"]
+_data = {
+&"RESET": SubResource("Animation_tcyjb"),
+&"buka_kulkas": SubResource("Animation_tbjjs")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypvc1"]
+size = Vector3(0.9, 0.62, 0.10250488)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j1767"]
+size = Vector3(0.9100952, 0.63879395, 0.11743164)
+
+[node name="kulkas" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(1, 1.975, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62102044, 0.12237862)
+operation = 2
+size = Vector3(0.9, 0.62, 0.7755664)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32519102, 0.12237862)
+operation = 2
+size = Vector3(0.9, 1.0805078, 0.7755664)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.325, 0.448)
+size = Vector3(0.9, 1.081, 0.103)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D9"]
+transform = Transform3D(0.5084186, 0, 0, 0, 0.67328, 0, 0, 0, 0.48722392, 0.39303967, 0.336317, 0.06552684)
+size = Vector3(0.047, 0.155, 0.073)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D9/CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01961875)
+operation = 2
+size = Vector3(0.047, 0.115, 0.073)
+
+[node name="CSGBox3D4" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.08, 0, 0, 0, 0.047, 0, 0, 0, 0.08, -0.35081, -0.99004227, 0.35964847)
+sides = 24
+
+[node name="CSGBox3D5" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D4"]
+transform = Transform3D(1.3550003, 0, 0, 0, 0.66196585, 0, 0, 0, 1.3550003, 0, -1.0759201, 0)
+sides = 24
+
+[node name="CSGBox3D5" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.08, 0, 0, 0, 0.047, 0, 0, 0, 0.08, 0.351, -0.99, 0.36)
+sides = 24
+
+[node name="CSGBox3D5" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D5"]
+transform = Transform3D(1.3550003, 0, 0, 0, 0.66196585, 0, 0, 0, 1.3550003, 0, -1.0759201, 0)
+sides = 24
+
+[node name="CSGBox3D6" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.08, 0, 0, 0, 0.047, 0, 0, 0, 0.08, 0.351, -0.99, -0.36)
+sides = 24
+
+[node name="CSGBox3D5" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D6"]
+transform = Transform3D(1.3550003, 0, 0, 0, 0.66196585, 0, 0, 0, 1.3550003, 0, -1.0759201, 0)
+sides = 24
+
+[node name="CSGBox3D7" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.08, 0, 0, 0, 0.047, 0, 0, 0, 0.08, -0.351, -0.99, -0.36)
+sides = 24
+
+[node name="CSGBox3D5" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D7"]
+transform = Transform3D(1.3550003, 0, 0, 0, 0.66196585, 0, 0, 0, 1.3550003, 0, -1.0759201, 0)
+sides = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_46bdx")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44794488, 0.62102044, 0.44691736)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4513116, 0, 0)
+mesh = SubResource("BoxMesh_ypvc1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44829035, 0.0025024414, -0.00036621094)
+shape = SubResource("BoxShape3D_j1767")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="StaticBody3D"]
+transform = Transform3D(0.5084186, 0, 0, 0, 0.67328, 0, 0, 0, 0.48722392, 0.8443513, 0, 0.06552684)
+use_collision = true
+size = Vector3(0.047, 0.155, 0.073)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="StaticBody3D/CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01961875)
+operation = 2
+size = Vector3(0.047, 0.115, 0.073)

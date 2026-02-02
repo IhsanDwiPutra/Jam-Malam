@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cixpyoji154mx"]
+
+[ext_resource type="PackedScene" uid="uid://cmk3yqkfoh6j4" path="res://assets/models/house2.glb" id="1_f3s2g"]
+[ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="2_hl4ym"]
+
+[node name="house2" instance=ExtResource("1_f3s2g")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cube_001" parent="." index="1"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cube_003" parent="." index="2"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cube_004" parent="." index="3"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cube_006" parent="." index="4"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cube_005" parent="." index="5"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cube_002" parent="." index="6"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cube_007" parent="." index="7"]
+material_override = ExtResource("2_hl4ym")
+
+[node name="Cone" parent="." index="8"]
+material_override = ExtResource("2_hl4ym")

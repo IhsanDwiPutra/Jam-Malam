@@ -1,0 +1,169 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfwrmlwdpgij3"]
+
+[ext_resource type="Script" uid="uid://bgtoi4hure2ou" path="res://scripts/pintu_ganda.gd" id="1_0pfg3"]
+[ext_resource type="Texture2D" uid="uid://vro3ydjy7day" path="res://assets/textures/pvc.png" id="2_nicbm"]
+[ext_resource type="Material" uid="uid://b831kqyvxfgu6" path="res://resources/stainles_material.tres" id="3_5h4qo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfohn"]
+albedo_color = Color(0.49313158, 0.4857369, 3.85046e-07, 1)
+albedo_texture = ExtResource("2_nicbm")
+
+[sub_resource type="BoxMesh" id="BoxMesh_y1u5v"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pfg3"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8wepl"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nicbm"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="Animation" id="Animation_8wepl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EngselKiri:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EngselKanan:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0pfg3"]
+resource_name = "buka_pintu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EngselKiri:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EngselKanan:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nicbm"]
+resource_name = "tutup_pintu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EngselKiri:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EngselKanan:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nicbm"]
+_data = {
+&"RESET": SubResource("Animation_8wepl"),
+&"buka_pintu": SubResource("Animation_0pfg3"),
+&"tutup_pintu": SubResource("Animation_nicbm")
+}
+
+[node name="PintuGanda" type="Node3D"]
+script = ExtResource("1_0pfg3")
+
+[node name="EngselKiri" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0004594, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EngselKiri"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="EngselKiri/StaticBody3D"]
+transform = Transform3D(0.26071906, 0, 0, 0, 0.33613753, 0, 0, 0, 0.25450155, 0.90409744, 0, 0)
+size = Vector3(0.28466797, 0.72998047, 1)
+material = SubResource("StandardMaterial3D_mfohn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="EngselKiri/StaticBody3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.7966194, 0, 0, 0, 0.73033535, 0, 0, 0)
+operation = 2
+size = Vector3(0.28466797, 0.72998047, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EngselKiri/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+material_override = ExtResource("3_5h4qo")
+mesh = SubResource("BoxMesh_y1u5v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EngselKiri/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+shape = SubResource("BoxShape3D_0pfg3")
+
+[node name="EngselKanan" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EngselKanan"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EngselKanan/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+material_override = ExtResource("3_5h4qo")
+mesh = SubResource("BoxMesh_8wepl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EngselKanan/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+shape = SubResource("BoxShape3D_nicbm")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="EngselKanan/StaticBody3D"]
+transform = Transform3D(0.26071906, 0, 0, 0, 0.33613753, 0, 0, 0, 0.25450155, -0.8996354, 0, 0)
+size = Vector3(0.28466797, 0.72998047, 1)
+material = SubResource("StandardMaterial3D_mfohn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="EngselKanan/StaticBody3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.7966194, 0, 0, 0, 0.73033535, 0, 0, 0)
+operation = 2
+size = Vector3(0.28466797, 0.72998047, 1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nicbm")
+}

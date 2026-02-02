@@ -1,0 +1,823 @@
+[gd_scene load_steps=38 format=3 uid="uid://bepc6pwf7cllb"]
+
+[ext_resource type="Material" uid="uid://bja0uadyyj0f2" path="res://resources/wall_material.tres" id="1_excbq"]
+[ext_resource type="PackedScene" uid="uid://bv5rwp5ksd2ht" path="res://scenes/actors/player.tscn" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://df4w3dgk6oe4x" path="res://scenes/interactables/pintu.tscn" id="2_6iamk"]
+[ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="2_v6ha0"]
+[ext_resource type="PackedScene" uid="uid://b06mvvvs0t4or" path="res://scenes/interactables/laci.tscn" id="3_nsrm0"]
+[ext_resource type="AudioStream" uid="uid://cmmf8oy3ux04p" path="res://assets/sounds/door_open.wav" id="4_np2pn"]
+[ext_resource type="PackedScene" uid="uid://dk102u6mpg83v" path="res://scenes/interactables/laci_2.tscn" id="4_x42e6"]
+[ext_resource type="PackedScene" uid="uid://bvc5vm244c4en" path="res://scenes/interactables/kunci.tscn" id="5_6761a"]
+[ext_resource type="AudioStream" uid="uid://bvmhm11jo33ax" path="res://assets/sounds/door_close.wav" id="5_v6ha0"]
+[ext_resource type="AudioStream" uid="uid://wt6tx8iw4lo6" path="res://assets/sounds/door_lock.mp3" id="6_gmpev"]
+[ext_resource type="PackedScene" uid="uid://cx6kujcwpegcd" path="res://scenes/interactables/laptop.tscn" id="6_sk5k4"]
+[ext_resource type="Script" uid="uid://6ans7mm72jqv" path="res://scripts/finish.gd" id="7_oc4kc"]
+[ext_resource type="AudioStream" uid="uid://cwjiswr63gxgo" path="res://assets/sounds/ambience.mp3" id="8_s8va5"]
+[ext_resource type="AudioStream" uid="uid://b7oyselyadlad" path="res://assets/sounds/chase.mp3" id="9_dga24"]
+[ext_resource type="PackedScene" uid="uid://bvlqbdlwqc5wm" path="res://scenes/decorate/jendela.tscn" id="10_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://b6m1pokmnio0s" path="res://scenes/decorate/sofa.tscn" id="12_iav0o"]
+[ext_resource type="PackedScene" uid="uid://yeoggcfqtdm8" path="res://scenes/decorate/sofa_1.tscn" id="13_dnkej"]
+[ext_resource type="PackedScene" uid="uid://bbyns12tpflru" path="res://scenes/decorate/meja.tscn" id="14_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://dfwrmlwdpgij3" path="res://scenes/interactables/pintu_ganda.tscn" id="15_wtwp4"]
+[ext_resource type="PackedScene" uid="uid://tou5cshgq67a" path="res://scenes/interactables/pagar_besi.tscn" id="20_gmpev"]
+[ext_resource type="Texture2D" uid="uid://bnodkgd5df7jv" path="res://assets/textures/concrete.jpg" id="21_7o3do"]
+[ext_resource type="PackedScene" uid="uid://bpd4if6fgcst0" path="res://scenes/decorate/lampu_jalan.tscn" id="21_mkypq"]
+[ext_resource type="PackedScene" uid="uid://d1mxr1tcdgqu4" path="res://scenes/decorate/pagar.tscn" id="22_7h2jl"]
+[ext_resource type="Texture2D" uid="uid://vro3ydjy7day" path="res://assets/textures/pvc.png" id="22_o7j4k"]
+[ext_resource type="PackedScene" uid="uid://dk8dvwcmvhbao" path="res://scenes/decorate/pagar_beton.tscn" id="23_mqh5v"]
+[ext_resource type="PackedScene" uid="uid://cdamva8yuonl7" path="res://scenes/decorate/mobil.tscn" id="26_o7j4k"]
+[ext_resource type="PackedScene" uid="uid://njetqst3td7y" path="res://scenes/decorate/rumah_tetangga.tscn" id="27_x7jkp"]
+[ext_resource type="PackedScene" uid="uid://cixpyoji154mx" path="res://scenes/decorate/rumah_tetangga2.tscn" id="28_0qwwm"]
+[ext_resource type="Script" uid="uid://chlcyk0udqlqp" path="res://scripts/mulai.gd" id="29_0qwwm"]
+
+[sub_resource type="Environment" id="Environment_ksju7"]
+background_mode = 1
+background_color = Color(0.011764706, 0.011764706, 0.019607844, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0, 0, 0.08235294, 1)
+ambient_light_energy = 0.5
+fog_enabled = true
+fog_light_color = Color(0, 0, 0.02745098, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31oqk"]
+albedo_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+albedo_texture = ExtResource("21_7o3do")
+uv1_scale = Vector3(0.07, 0.99, 0.89)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7jkp"]
+albedo_color = Color(0, 0.60577667, 0.014026648, 1)
+albedo_texture = ExtResource("22_o7j4k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qwwm"]
+albedo_color = Color(0.2051174, 0.20511746, 0.20511737, 1)
+albedo_texture = ExtResource("21_7o3do")
+uv1_scale = Vector3(0.28, 0.645, 0.89)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7j4k"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mkypq"]
+size = Vector3(0.10961914, 3.7138672, 16.637115)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8va5"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t4umt"]
+size = Vector3(5.7773438, 1.706543, 1.0290527)
+
+[node name="Level1" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="BangunanInduk" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028486252, 0.0042517185, -0.0026938915)
+use_collision = true
+size = Vector3(10, 8, 20)
+material = ExtResource("2_v6ha0")
+
+[node name="LubangLorong" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24368286, 0.56030273)
+operation = 2
+size = Vector3(2.5, 6.5126343, 20.879395)
+
+[node name="PijakanLantai2" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25133753, 0)
+size = Vector3(2.5, 0.5, 20)
+material = ExtResource("2_v6ha0")
+
+[node name="Kamar1" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, -2, 1.2)
+operation = 2
+size = Vector3(3.5, 3, 5)
+
+[node name="KamarMandi" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, -7.769035)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar10" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, -3.3740392)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar9" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16, 1.498, -3.374)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar8" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, 1.025185)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar7" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16, 1.498, 1.025)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar6" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.159855, 1.4980979, 5.7618833)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="Kamar5" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16, 1.498, 5.762)
+operation = 2
+size = Vector3(3.5, 3, 4.2319336)
+
+[node name="LorongAtas" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.505, 9.129)
+operation = 2
+size = Vector3(9.611, 3.014, 1.629)
+
+[node name="Kamar2" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, -2, -3.6)
+operation = 2
+size = Vector3(3.5, 3, 4)
+
+[node name="Kamar3" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, -2, 1.2)
+operation = 2
+size = Vector3(3.5, 3, 5)
+
+[node name="Kamar4" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, -2, -3.6)
+operation = 2
+size = Vector3(3.5, 3, 4)
+
+[node name="AreaDapur" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0492187, -2, -7.979622)
+operation = 2
+size = Vector3(3.6015625, 3, 3.8)
+
+[node name="Tangga" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.049, -2, -7.98)
+operation = 2
+size = Vector3(3.6015625, 3, 3.8)
+
+[node name="Tangga2" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.049, 1.2646949, -7.9799995)
+operation = 2
+size = Vector3(3.6015625, 3.5298157, 3.8)
+
+[node name="RuangTamu" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 7)
+operation = 2
+size = Vector3(9, 3, 5.845)
+
+[node name="Pintu1" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.278, -2.3999448, -0.6412254)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu2" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.278, -2.3999448, -2.255425)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu3" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.278, -2.4, -0.641)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu4" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.278, -2.4, -2.255)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu5" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3243, 1.0992054, -1.9060074)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu11" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3243, 1.0992054, -6.3042183)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu6" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324, 1.099, -1.906)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu7" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324, 1.099, -0.4416438)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu8" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.324, 1.099, -0.442)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu9" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.324, 1.099, 4.296939)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Pintu10" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324, 1.099, 4.297)
+operation = 2
+size = Vector3(0.2, 2.2, 1.3)
+
+[node name="Bordes" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.1015053, -2.20261, -6.64515)
+size = Vector3(1.2774658, 0.2, 1.5)
+material = ExtResource("2_v6ha0")
+
+[node name="Bordes2" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.2935886, -1.421941, -9.232571)
+size = Vector3(1.2774658, 0.2, 1.5)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.403687, -3.4, -6.679962)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga2" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.7033116, -3.2, -6.679962)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga3" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.003, -3, -6.6799994)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga4" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.303, -2.8, -6.6799994)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga5" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.603, -2.6, -6.6799994)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga6" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.903, -2.4, -6.6799994)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga7" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.203, -2.2, -6.6799994)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga8" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.248658, -2.0262656, -7.434019)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga9" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.248658, -1.8262656, -7.7336435)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga10" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2486205, -1.6262655, -8.033332)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga11" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2486205, -1.4262655, -8.333332)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga12" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4998858, -1.2203984, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga13" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.2002614, -1.0203984, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga14" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.900573, -0.8203984, -9.281259)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga15" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.6005728, -0.62039834, -9.281259)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga16" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.3345108, -0.37872842, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga17" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.0348864, -0.17872837, -9.281296)
+size = Vector3(1.2, 0.2, 0.3)
+material = ExtResource("2_v6ha0")
+
+[node name="AnakTangga18" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5317802, -0.04200353, -9.281259)
+size = Vector3(1.2, 0.07344971, 0.7068359)
+material = ExtResource("2_v6ha0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2260623, 0.5763848, -7.3656006)
+size = Vector3(0.04248047, 1.1343994, 2.6154785)
+material = ExtResource("2_v6ha0")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0865319, -1.9203131, 9.811793)
+operation = 2
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.087, -1.92, 9.812)
+operation = 2
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.804112, 1.6397762, 9.174381)
+operation = 2
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.804, 1.64, 9.174)
+operation = 2
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.755566, -1.92, 0.8350229)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.756, -1.92, 0.835)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.755566, -1.92, -3.7345877)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.756, -1.92, -3.735)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.756, 1.5885965, -2.7668583)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.756, 1.589, -2.767)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.756, 1.5885965, 0.7457863)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.756, 1.589, 0.746)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.756, 1.5885965, 5.152793)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.756, 1.589, 5.153)
+operation = 2
+size = Vector3(1, 1, 1.4232178)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2512207, 10.950977)
+size = Vector3(4.54, 0.498, 1.938)
+material = ExtResource("2_v6ha0")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.762096, 10.950977)
+size = Vector3(4.54, 0.498, 1.938)
+material = ExtResource("2_v6ha0")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.187119, 0.5323493, 10.950977)
+size = Vector3(0.16576171, 1.200916, 1.938)
+material = ExtResource("2_v6ha0")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.187, 0.532, 10.951)
+size = Vector3(0.16576171, 1.200916, 1.938)
+material = ExtResource("2_v6ha0")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0267984e-09, 0.532, 11.839218)
+size = Vector3(0.166, 1.201, 4.243)
+material = ExtResource("2_v6ha0")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1.349355, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7467284, 13.508471)
+size = Vector3(10.035, 0.498, 7.0351925)
+material = ExtResource("1_excbq")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.865573, -3.7467284, -0.00227952)
+size = Vector3(1.8076172, 0.498, 19.985022)
+material = ExtResource("1_excbq")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.866, -3.747, -0.002)
+size = Vector3(1.8076172, 0.498, 19.985022)
+material = ExtResource("1_excbq")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-7.054589e-08, -1, 0, 1.6139017, -4.371139e-08, 0, 0, 0, 1, -6.509908, -2.2557797, 3.512925)
+size = Vector3(1.8076172, 0.498, 27.014872)
+material = ExtResource("1_excbq")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-7.054589e-08, -1, 0, 1.6139017, -4.371139e-08, 0, 0, 0, 1, 6.51, -2.256, 3.513)
+size = Vector3(1.8076172, 0.498, 27.014872)
+material = ExtResource("1_excbq")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-7.054589e-08, 4.371139e-08, -0.068858266, 1.6139017, 0, -3.0098903e-09, 0, -1, -3.0098903e-09, 5.810967, -2.256, -9.738867)
+size = Vector3(1.8076172, 0.498, 27.014872)
+material = ExtResource("1_excbq")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-7.054589e-08, 4.371139e-08, -0.068858266, 1.6139017, 0, -3.0098903e-09, 0, -1, -3.0098903e-09, -5.811, -2.256, -9.739)
+size = Vector3(1.8076172, 0.498, 27.014872)
+material = ExtResource("1_excbq")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="CSGCombiner3D/BangunanInduk"]
+transform = Transform3D(-7.054589e-08, -1.3113416e-07, 1, 1.6139017, -7.642742e-15, 4.371139e-08, 0, 1, 1.3113416e-07, -2.5027072, -2.2560003, 16.776865)
+size = Vector3(1.8076172, 0.498, 7.6519723)
+material = ExtResource("1_excbq")
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Dapur" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0584931, -2.9724329, -9.471408)
+size = Vector3(3.6123352, 1, 0.8416748)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D2/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.352946, 0.46553445, -0.010154724)
+operation = 2
+size = Vector3(0.7827301, 0.49777985, 0.6709137)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D2/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.352946, -0.1014173, -0.010154724)
+operation = 2
+size = Vector3(0.073, 0.68165916, 0.071)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D2/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45316768, 0.27880478, 0.038246155)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D2/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45316768, -0.18977809, 0.038246155)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D2/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44655514, 0.028420687, 0.038246155)
+operation = 2
+size = Vector3(0.7827301, 0.76184464, 0.76771545)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2/Dapur"]
+transform = Transform3D(1, 0, 0, 0, 0.95601857, -0.29330623, 0, 0.29330623, 0.95601857, -1.3468492, 0.5969138, -0.34794426)
+size = Vector3(0.057, 0.238, 0.051)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2/Dapur/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.64653695, 0.7628828, 0, -0.7628828, 0.64653695, 0, 0.069149494, 0.032262802)
+size = Vector3(0.027, 0.083, 0.051)
+
+[node name="Dapur2" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.452571, -2.9724329, -7.8444347)
+size = Vector3(2.4242096, 1, 0.8416748)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D2/Dapur2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55146885, 0.27880478, 0.05807972)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D2/Dapur2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55146885, -0.16490984, 0.05807972)
+operation = 2
+size = Vector3(0.7827301, 0.32544708, 0.76771545)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D2/Dapur2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4060688, 0.028420687, 0.057083607)
+operation = 2
+size = Vector3(0.7827301, 0.76184464, 0.76771545)
+
+[node name="Player" parent="." instance=ExtResource("1_ksju7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8750157, 25.924295)
+
+[node name="Pencahayaan" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Pencahayaan"]
+transform = Transform3D(1, 0, 0, 0, 0.8000722, 0.5999037, 0, -0.5999037, 0.8000722, 0, 18.062517, 23.161816)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Pencahayaan"]
+environment = SubResource("Environment_ksju7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Pencahayaan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.69315696, -4.7567687)
+light_color = Color(1, 1, 0.76862746, 1)
+light_energy = 0.8
+
+[node name="Pintu" type="Node3D" parent="."]
+
+[node name="Pintu1" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3480868, -2.3929632, 0.007304311)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu3" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.348, -2.393, -1.2947817)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu4" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.348, -2.393, -2.9066849)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu5" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, -2.5587862)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu11" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, -6.956963)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu8" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3494323, 1.0992054, -1.2606096)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu9" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3494323, 1.0992054, 0.20630491)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu10" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3494323, 1.0992054, 4.9458265)
+is_locked = true
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu6" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, -1.1017573)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu7" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3566053, 1.0992054, 3.6498985)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Pintu2" parent="Pintu" instance=ExtResource("2_6iamk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3475411, -2.3929632, -1.596086)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="PintuGanda" parent="Pintu" instance=ExtResource("15_wtwp4")]
+transform = Transform3D(1.272047, 0, 0, 0, 1.5358473, 0, 0, 0, 1, 0.0001680255, -2.0116293, 9.950185)
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="PintuGanda2" parent="Pintu" instance=ExtResource("15_wtwp4")]
+transform = Transform3D(1.272047, 0, 0, 0, 1.5358473, 0, 0, 0, 1, 0.0001680255, 1.4489832, 9.950185)
+is_locked = true
+sfx_buka = ExtResource("4_np2pn")
+sfx_tutup = ExtResource("5_v6ha0")
+sfx_terkunci = ExtResource("6_gmpev")
+
+[node name="Laci" type="Node3D" parent="."]
+
+[node name="Laci1" parent="Laci" instance=ExtResource("3_nsrm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6024768, -2.6978798, -9.430468)
+
+[node name="Laci2" parent="Laci" instance=ExtResource("3_nsrm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6024768, -3.1664627, -9.430468)
+
+[node name="Laci3" parent="Laci" instance=ExtResource("4_x42e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0968087, -2.948264, -9.106819)
+
+[node name="Laci4" parent="Laci" instance=ExtResource("4_x42e6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.091257, -2.948264, -8.65209)
+
+[node name="Laci5" parent="Laci" instance=ExtResource("3_nsrm0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.41378, -2.6978798, -7.2902718)
+
+[node name="Laci6" parent="Laci" instance=ExtResource("3_nsrm0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.41378, -3.1430008, -7.2902718)
+
+[node name="SFX" type="Node3D" parent="."]
+
+[node name="BGM_Ambience" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_s8va5")
+volume_db = -10.0
+autoplay = true
+
+[node name="BGM_Chase" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_dga24")
+
+[node name="Furnitur" type="Node3D" parent="."]
+
+[node name="Sofa" parent="Furnitur" instance=ExtResource("12_iav0o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.753374, -3.0395236, 6.582064)
+
+[node name="Sofa1" parent="Furnitur" instance=ExtResource("13_dnkej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.259316, -3.0025692, 4.7766223)
+
+[node name="Sofa2" parent="Furnitur" instance=ExtResource("13_dnkej")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -2.3650007, -3.0025692, 8.454786)
+
+[node name="Meja" parent="Furnitur" instance=ExtResource("14_mm8aj")]
+transform = Transform3D(0.935, 0, 0, 0, 0.935, 0, 0, 0, 0.935, -2.2880046, -2.9539855, 6.6027765)
+
+[node name="Laptop" parent="Furnitur" instance=ExtResource("6_sk5k4")]
+transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, -4.3467665, 0.18608272, 5.249497)
+
+[node name="Kunci" parent="Furnitur" instance=ExtResource("5_6761a")]
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 3.5737052, -3.2681465, -9.30818)
+
+[node name="Jendela" type="Node3D" parent="."]
+
+[node name="Jendela1" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(0.7589466, 0, 0, 0, 0.8070395, 0, 0, 0, 1, 3.0886314, -1.9092093, 9.95215)
+
+[node name="Jendela2" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(0.7589466, 0, 0, 0, 0.8070395, 0, 0, 0, 1, -3.089, -1.909, 9.952)
+
+[node name="Jendela3" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, -4.9084044, -1.9065098, 0.8202059)
+
+[node name="Jendela4" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, 4.908, -1.907, 0.82)
+
+[node name="Jendela5" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, 4.908, -1.907, -3.7399726)
+
+[node name="Jendela6" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, -4.908, -1.907, -3.74)
+
+[node name="Jendela7" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, -4.908, 1.5807247, -2.7833333)
+
+[node name="Jendela9" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, -4.908, 1.5807247, 0.75452256)
+
+[node name="Jendela11" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, -4.908, 1.5807247, 5.139073)
+
+[node name="Jendela13" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-3.222173e-08, 0, -1.426694, 0, 0.8141669, 0, 0.7371472, 0, -6.236278e-08, -4.880796, 1.6369604, 9.174115)
+
+[node name="Jendela14" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-3.222173e-08, 0, -1.426694, 0, 0.8141669, 0, 0.7371472, 0, -6.236278e-08, 4.881, 1.637, 9.174)
+
+[node name="Jendela12" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, 4.908, 1.581, 5.139)
+
+[node name="Jendela10" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, 4.908, 1.581, 0.755)
+
+[node name="Jendela8" parent="Jendela" instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, 4.908, 1.581, -2.783)
+
+[node name="Alam" type="Node3D" parent="."]
+
+[node name="Trotoar" type="CSGBox3D" parent="Alam"]
+transform = Transform3D(1.349355, 0, 0, 0, 1, 0, 0, 0, 1, 1.5758793, -3.7467284, 18.397034)
+material_override = SubResource("StandardMaterial3D_31oqk")
+use_collision = true
+size = Vector3(27.574932, 0.498, 2.8042173)
+
+[node name="Trotoar4" type="CSGBox3D" parent="Alam"]
+transform = Transform3D(1.349355, 0, 0, 0, 1, 0, 0, 0, 1, 1.5544662, -3.7467284, 32.243507)
+material_override = SubResource("StandardMaterial3D_31oqk")
+use_collision = true
+size = Vector3(27.543194, 0.498, 2.8042173)
+
+[node name="Trotoar2" type="CSGBox3D" parent="Alam"]
+transform = Transform3D(0.27701297, 0, 0, 0, 1, 0, 0, 0, 3.2861414, 13.271465, -3.746729, 12.392942)
+material_override = SubResource("StandardMaterial3D_x7jkp")
+use_collision = true
+size = Vector3(48.758293, 0.498, 2.8042173)
+
+[node name="Trotoar3" type="CSGBox3D" parent="Alam"]
+transform = Transform3D(0.27701297, 0, 0, 0, 1, 0, 0, 0, 3.2861414, -11.685683, -4.022211, 13.075313)
+material_override = SubResource("StandardMaterial3D_x7jkp")
+use_collision = true
+size = Vector3(38.854607, 0.498, 2.8042173)
+
+[node name="Trotoar5" type="CSGBox3D" parent="Alam"]
+transform = Transform3D(1.0955173, 0, 0, 0, 1, 0, 0, 0, 3.2861414, 1.4966568, -3.7467284, 38.148907)
+material_override = SubResource("StandardMaterial3D_x7jkp")
+use_collision = true
+size = Vector3(33.87137, 0.498, 2.8042173)
+
+[node name="Jalan" type="CSGBox3D" parent="Alam"]
+transform = Transform3D(1.349355, 0, 0, 0, 1, 0, 0, 0, 1, 1.5789266, -3.868726, 25.362595)
+material_override = SubResource("StandardMaterial3D_0qwwm")
+use_collision = true
+size = Vector3(27.579449, 0.2540049, 11.325139)
+
+[node name="Lampu_Jalan" parent="Alam" instance=ExtResource("21_mkypq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.423344, -3.354643, 17.782766)
+
+[node name="PagarBeton" parent="Alam" instance=ExtResource("23_mqh5v")]
+transform = Transform3D(1.42, 0, 0, 0, 1.42, 0, 0, 0, 1.42, -12.216754, -2.2849286, 16.803501)
+
+[node name="Mobil" parent="Alam" instance=ExtResource("26_o7j4k")]
+transform = Transform3D(-7.365369e-08, 0, -1.685, 0, 1.685, 0, 1.685, 0, -7.365369e-08, -10.466434, -3.794643, 21.982882)
+
+[node name="Mobil2" parent="Alam" instance=ExtResource("26_o7j4k")]
+transform = Transform3D(-7.365369e-08, 0, -1.685, 0, 1.685, 0, 1.685, 0, -7.365369e-08, 12.762631, -3.784261, 22.147766)
+
+[node name="car01" parent="Alam/Mobil2" index="0"]
+material_override = SubResource("StandardMaterial3D_o7j4k")
+
+[node name="Pagar" parent="Alam" instance=ExtResource("22_7h2jl")]
+transform = Transform3D(1.5084964e-08, 0, -1.265, 0, 1.265, 0, 1.265, 0, 1.5084964e-08, 6.9585104, -2.6180966, 16.89397)
+
+[node name="Pagar2" parent="Alam/Pagar" instance=ExtResource("22_7h2jl")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, -4.9228396)
+
+[node name="house" parent="Alam" instance=ExtResource("27_x7jkp")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 14.993088, 0.9324446, 5.6141367)
+
+[node name="house2" parent="Alam" instance=ExtResource("28_0qwwm")]
+transform = Transform3D(-7.430936e-09, 0, -0.17, 0, 0.17, 0, 0.17, 0, -7.430936e-09, -15.165779, -2.1666105, 13.478446)
+
+[node name="PagarBesi" parent="Alam" instance=ExtResource("20_gmpev")]
+transform = Transform3D(2.0937433, 0, 0, 0, 2.669261, 0, 0, 0, 1, 3.6994452, -2.0597553, 16.466484)
+
+[node name="TembokTransparan" type="Node3D" parent="Alam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015165329, -3.9151409, 21.713161)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Alam/TembokTransparan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.36665, 1.4066863, -3.9484482)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Alam/TembokTransparan/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33410645, -0.05126953, 4.870514)
+shape = SubResource("BoxShape3D_mkypq")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Alam/TembokTransparan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0797043, 1.407, -3.948)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Alam/TembokTransparan/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33410645, -0.05126953, 4.870514)
+shape = SubResource("BoxShape3D_mkypq")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Alam/TembokTransparan"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.0865562, 1.407, 5.8865814)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Alam/TembokTransparan/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33410645, -0.05126953, 2.4283295)
+shape = SubResource("BoxShape3D_mkypq")
+
+[node name="AreaFinish" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.132607, 13.271394)
+script = ExtResource("7_oc4kc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaFinish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3697938, 0.7362814)
+shape = SubResource("BoxShape3D_s8va5")
+
+[node name="Mulai" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7658937, -3.3599846, 15.428339)
+priority = 1
+script = ExtResource("29_0qwwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mulai"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34521484, -0.35327148, 0.3453369)
+shape = SubResource("BoxShape3D_t4umt")
+
+[connection signal="body_entered" from="AreaFinish" to="AreaFinish" method="_on_body_entered"]
+[connection signal="body_entered" from="Mulai" to="Mulai" method="_on_body_entered"]
+
+[editable path="Alam/Mobil2"]

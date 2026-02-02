@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhyhf0p7f5b1t"]
+
+[ext_resource type="Script" uid="uid://c2r2qx1hger1j" path="res://scripts/main_menu.gd" id="1_sl1te"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fe2o3"]
+font_size = 64
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sl1te")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.53333336, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnPlay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "MULAI TEROR"
+
+[node name="BtnQuit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "KELUAR"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.23600002
+anchor_right = 0.5
+anchor_bottom = 0.23600002
+offset_left = -187.5
+offset_top = -43.92801
+offset_right = 187.5
+offset_bottom = 44.07199
+grow_horizontal = 2
+text = "JAM MALAM"
+label_settings = SubResource("LabelSettings_fe2o3")
+
+[connection signal="pressed" from="VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]

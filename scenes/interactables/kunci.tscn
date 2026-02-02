@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvc5vm244c4en"]
+
+[ext_resource type="Script" uid="uid://b67bbi18oj1on" path="res://scripts/kunci.gd" id="1_tabim"]
+[ext_resource type="AudioStream" uid="uid://dwhsg6e43liv7" path="res://assets/sounds/pickup_key.mp3" id="2_gb1oe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb1oe"]
+albedo_color = Color(1, 1, 0.007843138, 1)
+
+[node name="Kunci" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+script = ExtResource("1_tabim")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+radius = 0.206
+height = 0.053
+sides = 24
+material = SubResource("StandardMaterial3D_gb1oe")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4347425, 0, 0)
+size = Vector3(0.6, 0.03, 0.16)
+material = SubResource("StandardMaterial3D_gb1oe")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -0.74532855, 0.003775679, 0.10454798)
+operation = 2
+size = Vector3(0.13837892, 0.04148926, 0.16)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -0.74532855, 0.003775679, -0.08583045)
+operation = 2
+size = Vector3(0.13837892, 0.04148926, 0.16)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -0.5749535, 0.003775679, 0.12997472)
+operation = 2
+size = Vector3(0.13837892, 0.04148926, 0.16)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -0.44637674, 0.003775679, 0.12997472)
+operation = 2
+size = Vector3(0.13837892, 0.04148926, 0.16)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -0.3142643, 0.003775679, 0.12997472)
+operation = 2
+size = Vector3(0.13837892, 0.04148926, 0.16)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_gb1oe")

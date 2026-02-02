@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpd4if6fgcst0"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s4v5t"]
+bottom_radius = 0.8
+radial_segments = 24
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2mijo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xl8p"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_rgqec"]
+radial_segments = 24
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s4v5t"]
+size = Vector3(0.87628174, 4.634094, 1)
+
+[node name="Lampu_Jalan" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.535, 0, 0, 0, 0.16428348, 0, 0, 0, 0.535, 0, 0, 0)
+mesh = SubResource("CylinderMesh_s4v5t")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.135, 0, 0, 0, 2.187673, 0, 0, 0, 0.135, 0, 2.0970602, 0)
+mesh = SubResource("CylinderMesh_2mijo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.9010374e-09, -0.7177859, 0, 0.135, -3.1375418e-08, 0, 0, 0, 0.135, -0.6464459, 4.3033104, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_2mijo")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.445, 0, 0, 0, 0.254, 0, 0, 0, 0.445, -1.210816, 4.0009484, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_s4v5t")
+
+[node name="lampu" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.41999993, 0, 0, 0, 0.41999993, 0, 0, 0, 0.41999993, -1.2087063, 3.723296, 0)
+material_override = SubResource("StandardMaterial3D_2xl8p")
+mesh = SubResource("SphereMesh_rgqec")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1903812, 3.567535, 0)
+light_color = Color(1, 1, 0.4862745, 1)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 10.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007843018, 2.0558167, 0)
+shape = SubResource("BoxShape3D_s4v5t")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdamva8yuonl7"]
+
+[ext_resource type="PackedScene" uid="uid://be85dvx40lqi7" path="res://assets/models/Low_Poly_Cars_DevilsWorkShop_V03/DAE_COLLADA/Low_Poly_Vehicles_car01.dae" id="1_y1x1g"]
+[ext_resource type="Material" uid="uid://blp3ffcl5s74g" path="res://resources/pvc_material.tres" id="2_31hm1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts0we"]
+albedo_color = Color(1, 0.38039216, 0, 1)
+
+[node name="Mobil" instance=ExtResource("1_y1x1g")]
+
+[node name="car01" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_ts0we")
+
+[node name="wheel" parent="car01" index="0"]
+material_override = ExtResource("2_31hm1")
+
+[node name="wheel_2" parent="car01" index="1"]
+material_override = ExtResource("2_31hm1")
+
+[node name="wheel_3" parent="car01" index="2"]
+material_override = ExtResource("2_31hm1")
+
+[node name="wheel_4" parent="car01" index="3"]
+material_override = ExtResource("2_31hm1")
