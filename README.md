@@ -2,7 +2,7 @@
 
 ![Godot Engine](https://img.shields.io/badge/Made_with-Godot_4.3-blue?logo=godot-engine)
 ![Status](https://img.shields.io/badge/Status-In_Development-yellow)
-![Platform](https://img..shields.io/badge/Platform-PC_(Windows)-lightgrey)
+![Platform](https://img.shields.io/badge/Platform-PC_(Windows)-lightgrey)
 
 **Jam Malam** adalah game *Psychological Horror First-Person* yang mengambil latar di sebuah kos-kosan tua di Indonesia. Ini adalah proyek game pertama yang saya kembangkan untuk mempelajari *Game Development* dan *Computational Logic*.
 
