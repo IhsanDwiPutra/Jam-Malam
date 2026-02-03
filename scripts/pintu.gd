@@ -5,15 +5,17 @@ var is_open = false
 @onready var audio_player = $AudioStreamPlayer3D
 
 @export var is_locked = false 
+@export var nama_kunci = "kunci_kamar_doni"
 @export var sfx_buka : AudioStream
 @export var sfx_tutup : AudioStream
 @export var sfx_terkunci : AudioStream
 
 func interact(player):
 	if is_locked:
-		if player.has_key == true:
-			print("Pintu terbuka dengan kunci!")
+		if player.punya_kunci_kamar:
+			print("Pintu terbuka")
 			is_locked = false
+			print("Pintu terbuka dengan kunci!")
 			play_sound(sfx_buka)
 			buka_pintu()
 		else:

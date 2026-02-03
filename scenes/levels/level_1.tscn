@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bepc6pwf7cllb"]
+[gd_scene load_steps=40 format=3 uid="uid://bepc6pwf7cllb"]
 
 [ext_resource type="Material" uid="uid://bja0uadyyj0f2" path="res://resources/wall_material.tres" id="1_excbq"]
 [ext_resource type="PackedScene" uid="uid://bv5rwp5ksd2ht" path="res://scenes/actors/player.tscn" id="1_ksju7"]
@@ -28,7 +28,12 @@
 [ext_resource type="PackedScene" uid="uid://cdamva8yuonl7" path="res://scenes/decorate/mobil.tscn" id="26_o7j4k"]
 [ext_resource type="PackedScene" uid="uid://njetqst3td7y" path="res://scenes/decorate/rumah_tetangga.tscn" id="27_x7jkp"]
 [ext_resource type="PackedScene" uid="uid://cixpyoji154mx" path="res://scenes/decorate/rumah_tetangga2.tscn" id="28_0qwwm"]
-[ext_resource type="Script" uid="uid://chlcyk0udqlqp" path="res://scripts/mulai.gd" id="29_0qwwm"]
+[ext_resource type="Script" uid="uid://chlcyk0udqlqp" path="res://scripts/trigger_pagar.gd" id="29_0qwwm"]
+[ext_resource type="PackedScene" uid="uid://cj05wexi6de2p" path="res://scenes/actors/ibu_kost.tscn" id="30_t4umt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4umt"]
+albedo_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+albedo_texture = ExtResource("21_7o3do")
 
 [sub_resource type="Environment" id="Environment_ksju7"]
 background_mode = 1
@@ -60,10 +65,10 @@ albedo_color = Color(0, 0, 0, 1)
 size = Vector3(0.10961914, 3.7138672, 16.637115)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s8va5"]
-size = Vector3(2, 1, 2)
+size = Vector3(11.076294, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t4umt"]
-size = Vector3(5.7773438, 1.706543, 1.0290527)
+size = Vector3(12.727539, 1.706543, 1.0290527)
 
 [node name="Level1" type="Node3D"]
 
@@ -463,6 +468,7 @@ use_collision = true
 [node name="Dapur" type="CSGBox3D" parent="CSGCombiner3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0584931, -2.9724329, -9.471408)
 size = Vector3(3.6123352, 1, 0.8416748)
+material = SubResource("StandardMaterial3D_t4umt")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D2/Dapur"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.352946, 0.46553445, -0.010154724)
@@ -500,6 +506,7 @@ size = Vector3(0.027, 0.083, 0.051)
 [node name="Dapur2" type="CSGBox3D" parent="CSGCombiner3D2"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.452571, -2.9724329, -7.8444347)
 size = Vector3(2.4242096, 1, 0.8416748)
+material = SubResource("StandardMaterial3D_t4umt")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D2/Dapur2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55146885, 0.27880478, 0.05807972)
@@ -523,6 +530,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8750157, 25.924295)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Pencahayaan"]
 transform = Transform3D(1, 0, 0, 0, 0.8000722, 0.5999037, 0, -0.5999037, 0.8000722, 0, 18.062517, 23.161816)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Pencahayaan"]
 environment = SubResource("Environment_ksju7")
@@ -603,6 +611,7 @@ sfx_terkunci = ExtResource("6_gmpev")
 
 [node name="PintuGanda" parent="Pintu" instance=ExtResource("15_wtwp4")]
 transform = Transform3D(1.272047, 0, 0, 0, 1.5358473, 0, 0, 0, 1, 0.0001680255, -2.0116293, 9.950185)
+is_locked = true
 sfx_buka = ExtResource("4_np2pn")
 sfx_tutup = ExtResource("5_v6ha0")
 sfx_terkunci = ExtResource("6_gmpev")
@@ -678,8 +687,10 @@ transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427
 [node name="Jendela4" parent="Jendela" instance=ExtResource("10_qxy0u")]
 transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, 4.908, -1.907, 0.82)
 
-[node name="Jendela5" parent="Jendela" instance=ExtResource("10_qxy0u")]
-transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, 4.908, -1.907, -3.7399726)
+[node name="Jendela5" parent="Jendela" node_paths=PackedStringArray("target_marker") instance=ExtResource("10_qxy0u")]
+transform = Transform3D(-4.6519524e-08, -0.5746529, -1.0017222, -3.5527137e-15, 0.5666452, -1.0158783, 1.0642427, -2.5118876e-08, -4.378667e-08, 5.270751, -1.7637119, -3.7399726)
+is_interact = true
+target_marker = NodePath("../../PosisiMasukKamar")
 
 [node name="Jendela6" parent="Jendela" instance=ExtResource("10_qxy0u")]
 transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427, 0, -6.236278e-08, -4.908, -1.907, -3.74)
@@ -711,7 +722,7 @@ transform = Transform3D(-4.6519528e-08, 0, -1.426694, 0, 0.8070395, 0, 1.0642427
 [node name="Alam" type="Node3D" parent="."]
 
 [node name="Trotoar" type="CSGBox3D" parent="Alam"]
-transform = Transform3D(1.349355, 0, 0, 0, 1, 0, 0, 0, 1, 1.5758793, -3.7467284, 18.397034)
+transform = Transform3D(1.349355, 0, 0, 0, 1, 0, 0, 0, 1, 1.5758793, -3.7755113, 18.397034)
 material_override = SubResource("StandardMaterial3D_31oqk")
 use_collision = true
 size = Vector3(27.574932, 0.498, 2.8042173)
@@ -801,23 +812,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33410645, -0.05126953, 2.4
 shape = SubResource("BoxShape3D_mkypq")
 
 [node name="AreaFinish" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.132607, 13.271394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.132607, 20.33749)
 script = ExtResource("7_oc4kc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaFinish"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3697938, 0.7362814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1045532, -1.3697939, 0.73628235)
 shape = SubResource("BoxShape3D_s8va5")
 
-[node name="Mulai" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7658937, -3.3599846, 15.428339)
+[node name="TriggerPagar" type="Area3D" parent="." node_paths=PackedStringArray("pagar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7658937, -3.3599846, 14.000385)
 priority = 1
 script = ExtResource("29_0qwwm")
+pagar = NodePath("../Alam/PagarBesi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mulai"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34521484, -0.35327148, 0.3453369)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerPagar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8203125, -0.35327148, 0.3453369)
 shape = SubResource("BoxShape3D_t4umt")
 
+[node name="PosisiMasukKamar" type="Marker3D" parent="."]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.908177, -2.684608, -4.111905)
+
+[node name="IbuKost" parent="." instance=ExtResource("30_t4umt")]
+transform = Transform3D(-0.99999994, 0, 4.3711385e-08, 0, 1, 0, -4.3711385e-08, 0, -0.99999994, 0.34206474, -2.5, 6.6269493)
+
 [connection signal="body_entered" from="AreaFinish" to="AreaFinish" method="_on_body_entered"]
-[connection signal="body_entered" from="Mulai" to="Mulai" method="_on_body_entered"]
+[connection signal="body_entered" from="TriggerPagar" to="TriggerPagar" method="_on_body_entered"]
 
 [editable path="Alam/Mobil2"]

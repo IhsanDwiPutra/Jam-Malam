@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvlqbdlwqc5wm"]
+[gd_scene load_steps=7 format=3 uid="uid://bvlqbdlwqc5wm"]
 
+[ext_resource type="Script" uid="uid://tblcglbn6wwc" path="res://scripts/jendela.gd" id="1_speg4"]
 [ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="1_ywo0p"]
+[ext_resource type="AudioStream" uid="uid://bex2dxdvoxeph" path="res://assets/sounds/turun_dari_jendela.wav" id="3_j286q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjl05"]
 transparency = 1
@@ -13,6 +15,7 @@ size = Vector3(1.36, 1.23, 0.006)
 size = Vector3(1.36, 1.23, 0.006)
 
 [node name="Jendela" type="Node3D"]
+script = ExtResource("1_speg4")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 material_override = ExtResource("1_ywo0p")
@@ -33,3 +36,7 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_speg4")
+
+[node name="SfxNaik" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j286q")
+volume_db = -5.0

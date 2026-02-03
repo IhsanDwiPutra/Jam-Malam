@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk102u6mpg83v"]
+[gd_scene load_steps=11 format=3 uid="uid://dk102u6mpg83v"]
 
 [ext_resource type="Script" uid="uid://liconl86813q" path="res://scripts/laci_2.gd" id="1_vxkn5"]
+[ext_resource type="AudioStream" uid="uid://bmxrsxbgofkt5" path="res://assets/sounds/drawer2_open.wav" id="2_bjegn"]
 [ext_resource type="Material" uid="uid://br6of0b76fyby" path="res://resources/wood_material.tres" id="2_dsn1g"]
+[ext_resource type="AudioStream" uid="uid://bgm4klk4c128o" path="res://assets/sounds/drawer2_close.wav" id="3_kfdqj"]
 [ext_resource type="Material" uid="uid://b831kqyvxfgu6" path="res://resources/stainles_material.tres" id="3_o26ub"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e36jo"]
@@ -49,10 +51,12 @@ _data = {
 }
 
 [node name="Laci2" type="Node3D"]
+script = ExtResource("1_vxkn5")
+sfx_buka = ExtResource("2_bjegn")
+sfx_tutup = ExtResource("3_kfdqj")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
-script = ExtResource("1_vxkn5")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39968565, 0, 0)
@@ -83,3 +87,5 @@ material = ExtResource("3_o26ub")
 libraries = {
 &"": SubResource("AnimationLibrary_078kr")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

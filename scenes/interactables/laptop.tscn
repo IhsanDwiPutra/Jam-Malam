@@ -9,10 +9,10 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(1, 1, 0.92941177, 1)
 
 [node name="Laptop" type="Node3D"]
+script = ExtResource("1_q0a6r")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
-script = ExtResource("1_q0a6r")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.097579956, -0.13290459, 0.23242188)

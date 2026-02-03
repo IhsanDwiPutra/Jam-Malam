@@ -13,6 +13,9 @@ extends CharacterBody3D
 @onready var senter = $Head/SpotLight3D
 @onready var label_misi = $CanvasLayer/LabelMisi
 @onready var sfx_kaki = $SfxKaki
+@onready var layar_hitam = $CanvasLayer/LayarHitam
+@onready var ui_jantung = $CanvasLayer/IconJantung
+@onready var sfx_senter = $SfxSenter
 
 # --- Variabel ---
 var original_speed
@@ -21,6 +24,11 @@ var has_key = false
 var has_laptop = false
 var step_timer = 0.0
 var step_interval = 0.6
+var musuh_aktif = null
+
+# --- Inventory ---
+var punya_kunci_kamar = false
+var punya_kunci_pagar = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -34,6 +42,8 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 		
 	if Input.is_action_just_pressed("flashlight"):
+		sfx_senter.play()
+		await sfx_senter.finished
 		senter.visible = !senter.visible
 	
 	# LAYAR SENTUH
@@ -86,6 +96,29 @@ func _physics_process(delta: float) -> void:
 		step_timer = step_interval
 		
 	move_and_slide()
+	
+	if musuh_aktif != null:
+		var jarak = global_position.distance_squared_to(musuh_aktif.global_position)
+		
+		if jarak < 5.0:
+			ui_jantung.modulate = Color.RED
+			ui_jantung.scale = Vector2(1.0, 1.0) * (1.0 + sin(Time.get_ticks_msec() * 0.02) * 0.2)
+		elif jarak < 12.0:
+			ui_jantung.modulate = Color.YELLOW
+			ui_jantung.scale = Vector2(1, 1)
+		else:
+			ui_jantung.modulate = Color.GREEN
+			ui_jantung.visible = true
 
 func update_misi(teks_baru):
 	label_misi.text = teks_baru
+
+func fade_out():
+	var tween = create_tween()
+	tween.tween_property(layar_hitam, "modulate:a", 1.0, 0.5)
+	await tween.finished
+
+func fade_in():
+	var tween = create_tween()
+	tween.tween_property(layar_hitam, "modulate:a", 0.0, 0.5)
+	await tween.finished

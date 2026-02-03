@@ -1,16 +1,15 @@
-extends CSGCombiner3D
+extends Node3D
 
-@onready var audio = $"../AudioStreamPlayer3D"
+@onready var audio = $AudioStreamPlayer3D
 
+@export_enum("kamar", "pagar") var tipe_kunci = "kamar"
 
 func interact(player):
-	print("Kunci diambil!")
-	player.has_key = true
-	
-	player.update_misi("Misi: Buka Kamar 04 di Lantai 2")
-	
-	audio.play()
-	visible = false
-	await audio.finished
-	
-	queue_free()
+	if tipe_kunci == "kamar":
+		player.punya_kunci_kamar = true
+		player.update_misi("Misi: Cari kamar Dani")
+		audio.play()
+		visible = false
+		await audio.finished
+		queue_free()
+		

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv5rwp5ksd2ht"]
+[gd_scene load_steps=8 format=3 uid="uid://bv5rwp5ksd2ht"]
 
 [ext_resource type="Script" uid="uid://by6ff7geiyyf6" path="res://scripts/player_controller.gd" id="1_15tap"]
+[ext_resource type="Texture2D" uid="uid://bni0321njtynu" path="res://assets/img/heart.png" id="2_ktjr4"]
 [ext_resource type="AudioStream" uid="uid://bce1vjejdq0ts" path="res://assets/sounds/footsteps.mp3" id="2_ru62r"]
+[ext_resource type="AudioStream" uid="uid://d25jkcq5d0hqt" path="res://assets/sounds/flashlight_switch.wav" id="4_7wueq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ru62r"]
 
@@ -11,7 +13,7 @@ font_size = 24
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ru62r"]
 
 [node name="Player" type="CharacterBody3D"]
-floor_max_angle = 1.134464
+floor_max_angle = 1.1170107
 script = ExtResource("1_15tap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -35,24 +37,21 @@ target_position = Vector3(0, 0, -2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = 2.0
+[node name="LayarHitam" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-2, -2)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="LabelMisi" type="Label" parent="CanvasLayer"]
 offset_right = 258.0
 offset_bottom = 23.0
-text = "Misi: Cari Kunci Kamar di Lantai 1"
+text = "Misi: Masuk ke kost dan Ambil Laptop"
 label_settings = SubResource("LabelSettings_15tap")
 
 [node name="TombolMaju" type="TouchScreenButton" parent="CanvasLayer"]
@@ -111,6 +110,35 @@ scale = Vector2(83.99996, 69)
 texture_normal = SubResource("PlaceholderTexture2D_ru62r")
 action = "jump"
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IconJantung" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0, 1, 0, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 40.0
+offset_right = -50.0
+offset_bottom = 140.0
+grow_horizontal = 0
+texture = ExtResource("2_ktjr4")
+expand_mode = 1
+
 [node name="SfxKaki" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ru62r")
 volume_db = -5.0
+
+[node name="SfxSenter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7wueq")
